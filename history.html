@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>壓瘡防治 - 歷史紀錄</title>
+  <link rel="stylesheet" href="history.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="header-content">
+        <a href="index.html" class="back-icon">
+          <i class="fas fa-chevron-left"></i>
+        </a>
+        <h1 class="header-title">501-A 黃大明</h1>
+        <div class="menu-container">
+          <button class="hamburger-btn" id="hamburgerBtn">
+            <i class="fas fa-bars"></i>
+          </button>
+          <nav class="nav-items" id="navItems">
+            <a href="index.html" class="nav-link">
+              <i class="fas fa-home"></i>
+              <span>返回首頁</span>
+            </a>
+            <a href="patient-info.html" class="nav-link">
+              <i class="fas fa-user"></i>
+              <span>患者資訊</span>
+            </a>
+            <a href="history.html" class="nav-link">
+              <i class="fas fa-history"></i>
+              <span>歷史紀錄</span>
+            </a>
+            <a href="1st.html" class="nav-link">
+              <i class="fas fa-chart-line"></i>
+              <span>即時監測</span>
+            </a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <div class="history-list">
+      <div class="history-card">
+        <div class="history-header">
+          <h2><i class="fas fa-calendar-alt"></i> 2024年3月</h2>
+        </div>
+        <div class="history-content">
+          <div class="history-item warning">
+            <div class="history-date">
+              <i class="fas fa-exclamation-circle"></i>
+              <span>3月15日 14:30</span>
+            </div>
+            <div class="history-details">
+              <div class="history-title">異常警告</div>
+              <div class="history-description">
+                持續壓力超過閾值（45分鐘）
+                <span class="status-badge">已處理</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="history-item normal">
+            <div class="history-date">
+              <i class="fas fa-check-circle"></i>
+              <span>3月15日 10:00</span>
+            </div>
+            <div class="history-details">
+              <div class="history-title">定期檢查</div>
+              <div class="history-description">
+                護理師巡房記錄
+                <span class="status-badge">正常</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="history-item warning">
+            <div class="history-date">
+              <i class="fas fa-exclamation-circle"></i>
+              <span>3月14日 20:15</span>
+            </div>
+            <div class="history-details">
+              <div class="history-title">姿勢異常</div>
+              <div class="history-description">
+                同一姿勢持續過久
+                <span class="status-badge">已處理</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="history-card">
+        <div class="history-header">
+          <h2><i class="fas fa-calendar-alt"></i> 統計分析</h2>
+        </div>
+        <div class="history-stats">
+          <div class="stat-item">
+            <div class="stat-icon">
+              <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <div class="stat-info">
+              <div class="stat-value">5次</div>
+              <div class="stat-label">本月異常警告</div>
+            </div>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="stat-info">
+              <div class="stat-value">30分鐘</div>
+              <div class="stat-label">平均處理時間</div>
+            </div>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-icon">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="stat-info">
+              <div class="stat-value">100%</div>
+              <div class="stat-label">處理率</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="menu.js"></script>
+</body>
+</html> 

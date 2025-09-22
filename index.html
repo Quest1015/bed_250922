@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>壓瘡監控平台</title>
+  <link rel="stylesheet" href="start.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1><i class="fas fa-hospital-user"></i> 壓瘡防治系統</h1>
+    </header>
+
+    <div class="patient-list">
+      <div class="patient-section" onclick="location.href='1st.html'">
+        <div class="patient-header">
+          <div class="patient-info">
+            <div class="patient-name"><i class="fas fa-user"></i> 黃大明</div>
+            <div class="patient-room"><i class="fas fa-bed"></i> 病房：501-A</div>
+          </div>
+          <div class="status-indicator normal">監測中</div>
+        </div>
+        
+        <div class="status-cards">
+          <div class="photo-card">
+            <div class="photo-container">
+              <img src="/img/man.jpeg" alt="患者照片">
+            </div>
+          </div>
+          
+          <div class="status-card">
+            <div class="card-icon">
+              <i class="fas fa-thermometer-half"></i>
+            </div>
+            <div class="card-content">
+              <div class="card-label">體溫</div>
+              <div class="card-value">36.5°C</div>
+              <div class="card-range">正常範圍: 36.1-37.2°C</div>
+            </div>
+          </div>
+          
+          <div class="status-card">
+            <div class="card-icon">
+              <i class="fas fa-bed"></i>
+            </div>
+            <div class="card-content">
+              <div class="card-label">姿勢狀態</div>
+              <div class="card-value normal">正常</div>
+              <div class="card-range">上次變動: 30分鐘前</div>
+            </div>
+          </div>
+          
+          <div class="status-card">
+            <div class="card-icon">
+              <i class="fas fa-clipboard-check"></i>
+            </div>
+            <div class="card-content">
+              <div class="card-label">處理狀態</div>
+              <div class="card-value">正常監測中</div>
+              <div class="card-range">Braden Scale: 15分</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="patient-section warning">
+        <div class="patient-header">
+          <div class="patient-info">
+            <div class="patient-name"><i class="fas fa-user"></i> 李華</div>
+            <div class="patient-room"><i class="fas fa-bed"></i> 病房：502-B</div>
+          </div>
+          <div class="status-indicator warning">需要注意</div>
+        </div>
+        
+        <div class="status-cards">
+          <div class="photo-card">
+            <div class="photo-container">
+              <img src="/img/oldman.jpg" alt="患者照片">
+            </div>
+          </div>
+          
+          <div class="status-card warning">
+            <div class="card-icon">
+              <i class="fas fa-thermometer-full"></i>
+            </div>
+            <div class="card-content">
+              <div class="card-label">體溫</div>
+              <div class="card-value abnormal">38.5°C</div>
+              <div class="card-range">高於正常範圍</div>
+            </div>
+          </div>
+          
+          <div class="status-card warning">
+            <div class="card-icon">
+              <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <div class="card-content">
+              <div class="card-label">姿勢狀態</div>
+              <div class="card-value abnormal">異常</div>
+              <div class="card-range">持續時間: 45分鐘</div>
+            </div>
+          </div>
+          
+          <div class="status-card">
+            <div class="card-icon">
+              <i class="fas fa-user-nurse"></i>
+            </div>
+            <div class="card-content">
+              <div class="card-label">處理狀態</div>
+              <div class="card-value2">已通知護理師</div>
+              <div class="card-range">Braden Scale: 12分</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html> 

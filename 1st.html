@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>壓瘡防治 - 即時監測</title>
+  <link rel="stylesheet" href="1st.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="header-content">
+        <a href="index.html" class="back-icon">
+          <i class="fas fa-chevron-left"></i>
+        </a>
+        <h1 class="header-title">501-A 黃大明</h1>
+        <div class="menu-container">
+          <button class="hamburger-btn" id="hamburgerBtn">
+            <i class="fas fa-bars"></i>
+          </button>
+          <nav class="nav-items" id="navItems">
+            <a href="index.html" class="nav-link">
+              <i class="fas fa-home"></i>
+              <span>返回首頁</span>
+            </a>
+            <a href="patient-info.html" class="nav-link">
+              <i class="fas fa-user"></i>
+              <span>患者資訊</span>
+            </a>
+            <a href="history.html" class="nav-link">
+              <i class="fas fa-history"></i>
+              <span>歷史紀錄</span>
+            </a>
+            <a href="1st.html" class="nav-link">
+              <i class="fas fa-chart-line"></i>
+              <span>即時監測</span>
+            </a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <div class="monitoring-dashboard">
+      <div class="vital-signs">
+        <div class="chart-card">
+          <div class="chart-header">
+            <h2><i class="fas fa-chart-line"></i> 壓力感應</h2>
+            <div class="chart-info">
+              <span class="update-time">最後更新: 1分鐘前</span>
+            </div>
+          </div>
+          <div class="chart-body">
+            <canvas id="pressureChart"></canvas>
+          </div>
+        </div>
+
+        <div class="chart-card">
+          <div class="chart-header">
+            <h2><i class="fas fa-weight"></i> 壓力分佈圖</h2>
+            <div class="chart-info">
+              <span class="pressure-level">當前壓力: 正常</span>
+            </div>
+          </div>
+          <div class="chart-body">
+            <img src="img/160778.jpg" alt="壓力分佈圖" class="pressure-map">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert-overlay" id="alertOverlay"></div>
+  <div class="alert-card" id="alertCard">
+    <div class="alert-content">
+      <div class="alert-icon">
+        <i class="fas fa-exclamation-triangle"></i>
+      </div>
+      <h3>發現異常</h3>
+      <p>正在呼叫中，請稍後...</p>
+      <div class="loading-dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="menu.js"></script>
+</body>
+</html>

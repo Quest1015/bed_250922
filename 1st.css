@@ -1,0 +1,369 @@
+:root {
+  --primary-blue: #2c7be5;    /* 主要醫療藍 */
+  --secondary-green: #4ad991; /* 健康綠 */
+  --warning-red: #ff6b6b;     /* 警告紅 */
+  --text-dark: #2c3e50;       /* 主要文字色 */
+  --text-light: #6e84a3;      /* 次要文字色 */
+  --bg-primary: rgba(165, 255, 214, 0.7);    /* 修改主要背景色 */
+  --bg-secondary: rgba(255, 255, 255, 0.7);  /* 修改次要背景色 */
+  --border-color: #e9ecef;    /* 邊框顏色 */
+}
+
+body {
+  background-color: var(--bg-primary);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* 響應式容器 */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* Header 響應式調整 */
+.header {
+  background-color: var(--bg-secondary);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(44, 123, 229, 0.1);
+  margin-bottom: 20px;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.header-title {
+  color: var(--text-dark);
+  margin: 0;
+  font-size: clamp(20px, 5vw, 28px);
+  flex-grow: 1;
+  text-align: center;
+  padding: 0 40px;
+}
+
+/* 導航按鈕樣式 */
+.back-icon, .hamburger-btn {
+  color: var(--primary-blue);
+  font-size: clamp(18px, 4vw, 24px);
+  padding: 10px;
+  cursor: pointer;
+  transition: color 0.3s;
+  background: none;
+  border: none;
+}
+
+.back-icon:hover, .hamburger-btn:hover {
+  color: var(--text-dark);
+}
+
+/* 導航菜單樣式 */
+.nav-items {
+  position: absolute;
+  top: 100%;
+  right: 10px;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 8px;
+  min-width: min(200px, 80vw);
+  display: none;
+  z-index: 1000;
+}
+
+.nav-items.show {
+  display: block;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  color: var(--text-dark);
+  text-decoration: none;
+  transition: background-color 0.3s;
+  border-radius: 6px;
+}
+
+.nav-link:hover {
+  background-color: var(--bg-primary);
+}
+
+.nav-link i {
+  margin-right: 12px;
+  color: var(--primary-blue);
+  width: 20px;
+  text-align: center;
+}
+
+/* 監控面板樣式 */
+.monitoring-dashboard {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.vital-signs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
+  gap: 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.chart-card {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(44, 123, 229, 0.1);
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.chart-header h2 {
+  color: var(--text-dark);
+  font-size: clamp(16px, 4vw, 18px);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.chart-info {
+  font-size: clamp(12px, 3vw, 14px);
+  color: var(--text-light);
+}
+
+.chart-body {
+  width: 100%;
+  height: min(300px, 50vh);
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.pressure-map {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  max-height: 100%;
+}
+
+/* 警告卡片樣式 */
+.alert-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1999;
+}
+
+.alert-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.alert-card {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  background: var(--bg-secondary);
+  width: min(90%, 400px);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 2000;
+  border-left: 4px solid var(--warning-red);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.alert-card.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.alert-icon {
+  font-size: clamp(32px, 8vw, 40px);
+  color: var(--warning-red);
+  margin-bottom: 15px;
+}
+
+.alert-content h3 {
+  font-size: clamp(20px, 5vw, 24px);
+  color: var(--warning-red);
+  margin: 0 0 10px 0;
+}
+
+.alert-content p {
+  font-size: clamp(14px, 3.5vw, 16px);
+  color: var(--text-dark);
+  margin: 0 0 20px 0;
+}
+
+/* 載入動畫 */
+.loading-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.loading-dots span {
+  width: 8px;
+  height: 8px;
+  background-color: var(--text-light);
+  border-radius: 50%;
+  animation: bounce 1.4s infinite ease-in-out both;
+}
+
+.loading-dots span:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.loading-dots span:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes bounce {
+  0%, 80%, 100% { 
+    transform: scale(0);
+  }
+  40% { 
+    transform: scale(1);
+  }
+}
+
+/* 響應式設計 */
+@media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  .chart-card {
+    padding: 12px;
+  }
+
+  .chart-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .chart-body {
+    height: 250px;
+    padding: 8px;
+  }
+
+  canvas {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .pressure-map {
+    object-fit: contain;
+  }
+}
+
+/* 小螢幕手機 */
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 8px;
+    min-height: 100vh;
+  }
+
+  .chart-card {
+    padding: 10px;
+  }
+
+  .chart-header h2 {
+    font-size: 16px;
+  }
+
+  .chart-info {
+    font-size: 12px;
+  }
+
+  .chart-body {
+    height: 200px;
+    padding: 5px;
+  }
+
+  .alert-card {
+    width: 95%;
+    padding: 15px;
+  }
+}
+
+/* 橫向模式優化 */
+@media screen and (max-height: 480px) and (orientation: landscape) {
+  .chart-body {
+    height: 70vh;
+  }
+
+  .vital-signs {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .alert-card {
+    max-height: 80vh;
+  }
+}
+
+/* 極小螢幕 */
+@media screen and (max-width: 320px) {
+  .container {
+    padding: 5px;
+  }
+
+  .chart-card {
+    padding: 8px;
+  }
+
+  .chart-header h2 {
+    font-size: 14px;
+  }
+
+  .chart-info {
+    font-size: 11px;
+  }
+
+  .chart-body {
+    height: 180px;
+  }
+} 

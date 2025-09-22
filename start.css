@@ -1,0 +1,220 @@
+:root {
+  --primary-blue: #2c7be5;    /* 主要醫療藍 */
+  --secondary-green: #4ad991; /* 健康綠 */
+  --warning-red: #ff6b6b;     /* 警告紅 */
+  --text-dark: #2c3e50;       /* 主要文字色 */
+  --text-light: #6e84a3;      /* 次要文字色 */
+  --bg-primary: rgba(165, 255, 214, 0.7);    /* 修改主要背景色 */
+  --bg-secondary: rgba(255, 255, 255, 0.7);  /* 修改次要背景色 */
+  --border-color: #e9ecef;    /* 邊框顏色 */
+}
+
+body {
+  background-color: var(--bg-primary);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  background-color: var(--bg-secondary);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(44, 123, 229, 0.1);
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  color: var(--primary-blue);
+  margin: 0;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.patient-section {
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(44, 123, 229, 0.1);
+  margin-bottom: 20px;
+  border-left: 4px solid var(--primary-blue);
+  transition: transform 0.2s;
+}
+
+.patient-section:hover {
+  transform: translateY(-2px);
+}
+
+.patient-section.warning {
+  border-left-color: var(--warning-red);
+}
+
+.patient-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.patient-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.patient-name {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.patient-room {
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-indicator {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.status-indicator.normal {
+  background-color: rgba(74, 217, 145, 0.1);
+  color: var(--secondary-green);
+}
+
+.status-indicator.warning {
+  background-color: rgba(255, 107, 107, 0.1);
+  color: var(--warning-red);
+}
+
+.status-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.status-card {
+  background: var(--bg-secondary);
+  border-radius: 10px;
+  padding: 15px;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  border: 1px solid var(--border-color);
+}
+
+.status-card.warning {
+  border-left: 3px solid var(--warning-red);
+}
+
+.card-icon {
+  font-size: 24px;
+  color: var(--primary-blue);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(44, 123, 229, 0.1);
+  border-radius: 8px;
+}
+
+.warning .card-icon {
+  color: var(--warning-red);
+  background: rgba(255, 107, 107, 0.1);
+}
+
+.card-content {
+  flex: 1;
+}
+
+.card-label {
+  color: var(--text-light);
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.card-value {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.card-value.normal {
+  color: var(--secondary-green);
+}
+
+.card-value.abnormal {
+  color: var(--warning-red);
+}
+
+.card-value2 {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--secondary-green);
+  margin-bottom: 4px;
+}
+
+.card-range {
+  font-size: 12px;
+  color: var(--text-light);
+}
+
+.photo-card {
+  background: var(--bg-secondary);
+  border-radius: 10px;
+  padding: 15px;
+  border: 1px solid var(--border-color);
+}
+
+.photo-container {
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.photo-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  .status-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .patient-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .status-indicator {
+    align-self: flex-start;
+  }
+} 
